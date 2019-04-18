@@ -1,6 +1,6 @@
 # jobtracker-js
 
-Jobtracker contains a lot of different sources to find jobs directly on companies websites.
+JobTracker aims to help you find your future dream job. You can use our library to scrap and export jobs from 50+ providers.
 
 ### Compile
 
