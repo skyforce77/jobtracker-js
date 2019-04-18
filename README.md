@@ -9,6 +9,10 @@ cd jobtracker-js
 go get -u github.com/gopherjs/gopherjs
 go get -u github.com/IDerr/jobtracker/providers
 gopherjs build
+```
+
+If you are using NodeJS, you'll also need xhr2
+```sh
 npm install xhr2
 ```
 
