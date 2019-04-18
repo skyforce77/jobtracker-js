@@ -39,7 +39,7 @@ for (var i = 0; i < providers.length; i++) {
 | Confluent | confluent |
 | Coursera | Coursera |
 | Dell | Dell |
-| Disney | Aulani, ABC Television, Disney*, ESPN, Marvel, Lucasfilm |
+| Disney | °O° Aulani, ABC Television, Disney, ESPN, Marvel, Lucasfilm |
 | Doctrine | Doctrine |
 | DukeEnergy | Duke Energy |
 | ERM | ERM |
