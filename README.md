@@ -9,6 +9,7 @@ cd jobtracker-js
 go get -u github.com/gopherjs/gopherjs
 go get -u github.com/IDerr/jobtracker/providers
 gopherjs build
+npm install xhr2
 ```
 
 ### Example
