@@ -62,3 +62,7 @@ typings/
 
 # goland
 .idea
+
+#gopherjs
+jobtracker-js.js
+jobtracker-js.js.map
