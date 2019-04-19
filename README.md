@@ -44,7 +44,7 @@ for (var i = 0; i < providers.length; i++) {
 | Confluent | confluent |
 | Coursera | Coursera |
 | Dell | Dell |
-| Disney | °O° Aulani, ABC Television, Disney, ESPN, Marvel, Lucasfilm |
+| Disney | °O° Aulani, ABC Television, Disney*, ESPN, Marvel, Lucasfilm |
 | Doctrine | Doctrine |
 | DukeEnergy | Duke Energy |
 | ERM | ERM |
@@ -58,10 +58,12 @@ for (var i = 0; i < providers.length; i++) {
 | Kering | Alexander McQueen, Balenciaga, Bottega Veneta, Boucheron, Brioni, Girard-Perregaux, Gucci, Kering, Pomellato, Qeelin, Saint Laurent, Ulysse Nardin |
 | Kickstarter | Kickstarter |
 | Lever | Lever |
+| LinuxFoundation | Linux Foundation |
 | Logitech | Astro, Blue Microphones, Jaybird, Logitech, Ultimate Ears |
 | Mastercard | Mastercard |
 | Medium | Medium |
 | Netflix | Netflix |
+| Nintendo | Nintendo |
 | Npmjs | Npmjs |
 | UniversityOfNevadaReno | University Of Nevada Reno |
 | NYTimes | NYTimes |
