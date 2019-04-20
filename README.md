@@ -8,7 +8,7 @@ JobTracker aims to help you find your future dream job. You can use our library 
 cd jobtracker-js
 go get -u github.com/gopherjs/gopherjs
 go get -u github.com/IDerr/jobtracker/providers
-gopherjs build
+gopherjs build -m
 ```
 
 If you are using NodeJS, you'll also need xhr2
