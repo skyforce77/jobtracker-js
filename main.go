@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/IDerr/jobtracker/providers"
 	"github.com/gopherjs/gopherjs/js"
 	"net/http"
@@ -9,7 +8,7 @@ import (
 )
 
 func main() {
-	js.Module.Get("exports").Set("getProviders", GetProviders)
+	js.Module.Get("exports").Set("getProviders", getProviders)
 
 	httpFix()
 }
@@ -29,22 +28,21 @@ func httpFix() {
 	}
 }
 
-func GetProviders() []*js.Object {
+func getProviders() []*js.Object {
 	jsProviders := make([]*js.Object, 0)
 	for _, p := range providers.GetProviders() {
 		j := p
 		jsp := js.Global.Get("Object").New()
 		jsp.Set("retrieveJobs", func(fn func(interface{})) {
-			go j.RetrieveJobs(GetCallback(fn))
+			go j.RetrieveJobs(getCallback(fn))
 		})
 		jsProviders = append(jsProviders, jsp)
 	}
 	return jsProviders
 }
 
-func GetCallback(fn func(interface{})) func(job *providers.Job) {
+func getCallback(fn func(interface{})) func(job *providers.Job) {
 	return func(job *providers.Job) {
-		fmt.Println(job)
 		jsJob := js.Global.Get("Object").New()
 		jsJob.Set("title", job.Title)
 		jsJob.Set("company", job.Company)
