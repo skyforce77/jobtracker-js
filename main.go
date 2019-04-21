@@ -4,11 +4,13 @@ import (
 	"github.com/IDerr/jobtracker/providers"
 	"github.com/gopherjs/gopherjs/js"
 	"net/http"
+	"reflect"
 	"strings"
 )
 
 func main() {
 	js.Module.Get("exports").Set("getProviders", getProviders)
+	generateConstructors()
 
 	httpFix()
 }
@@ -28,17 +30,36 @@ func httpFix() {
 	}
 }
 
+func convertProvider(p providers.Provider) *js.Object {
+	jsp := js.Global.Get("Object").New()
+	jsp.Set("retrieveJobs", func(fn func(interface{})) {
+		go p.RetrieveJobs(getCallback(fn))
+	})
+	return jsp
+}
+
 func getProviders() []*js.Object {
 	jsProviders := make([]*js.Object, 0)
 	for _, p := range providers.GetProviders() {
-		j := p
-		jsp := js.Global.Get("Object").New()
-		jsp.Set("retrieveJobs", func(fn func(interface{})) {
-			go j.RetrieveJobs(getCallback(fn))
-		})
+		jsp := convertProvider(p)
 		jsProviders = append(jsProviders, jsp)
 	}
 	return jsProviders
+}
+
+func generateConstructors() {
+	for _, p := range providers.GetProviders() {
+		typ := reflect.TypeOf(p)
+		name := typ.String()[11:]
+		if name[0] == '_' {
+			name = name[1:]
+		}
+		name = "new" + strings.Title(name)
+
+		js.Module.Get("exports").Set(name, func() *js.Object {
+			return convertProvider(p)
+		})
+	}
 }
 
 func getCallback(fn func(interface{})) func(job *providers.Job) {

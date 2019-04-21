@@ -30,6 +30,14 @@ for (var i = 0; i < providers.length; i++) {
 }
 ```
 
+Or by selecting a provider
+
+```js
+jt = require("./jobtracker-js.js")
+
+jt.newWorkday().retrieveJobs(console.log)
+```
+
 ### Providers and Companies
 
 | Provider | Companies |
