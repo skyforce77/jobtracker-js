@@ -9,7 +9,7 @@ JobTracker aims to help you find your future dream job. You can use our library 
 ```sh
 cd jobtracker-js
 go get -u github.com/gopherjs/gopherjs
-go get -u github.com/IDerr/jobtracker/providers
+go get -u github.com/skyforce77/jobtracker/providers
 gopherjs build -m
 ```
 

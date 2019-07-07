@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/IDerr/jobtracker/providers"
+	"github.com/skyforce77/jobtracker/providers"
 	"github.com/gopherjs/gopherjs/js"
 	"net/http"
 	"reflect"
